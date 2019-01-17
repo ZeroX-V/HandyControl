@@ -304,6 +304,15 @@ namespace HandyControlDemo.Properties.Langs {
         }
         
         /// <summary>
+        ///   查找类似 封面流 的本地化字符串。
+        /// </summary>
+        public static string CoverFlow {
+            get {
+                return ResourceManager.GetString("CoverFlow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   查找类似 封面视图 的本地化字符串。
         /// </summary>
         public static string CoverView {
@@ -354,6 +363,15 @@ namespace HandyControlDemo.Properties.Langs {
         public static string Default {
             get {
                 return ResourceManager.GetString("Default", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 在这里拖拽 的本地化字符串。
+        /// </summary>
+        public static string DragHere {
+            get {
+                return ResourceManager.GetString("DragHere", resourceCulture);
             }
         }
         
@@ -660,6 +678,15 @@ namespace HandyControlDemo.Properties.Langs {
         public static string OpenMouseFollowWindow {
             get {
                 return ResourceManager.GetString("OpenMouseFollowWindow", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   查找类似 打开无非客户端区域可拖拽窗口 的本地化字符串。
+        /// </summary>
+        public static string OpenNoNonClientAreaDragableWindow {
+            get {
+                return ResourceManager.GetString("OpenNoNonClientAreaDragableWindow", resourceCulture);
             }
         }
         

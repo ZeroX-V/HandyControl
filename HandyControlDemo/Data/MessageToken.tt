@@ -35,10 +35,12 @@ var controlList = new List<string>
 	"FlipClockDemoCtl",
 	"QQGroupView",
 	"BlurWindow",
+	"NoNonClientAreaDragableWindow",
 	"RateDemoCtl",
 	"ShieldDemoCtl",
 	"WaterfallPanelDemoCtl",
-	"CoverViewDemoCtl"
+	"CoverViewDemoCtl",
+	"CoverFlowDemoCtl"
 };
 var styleList = new List<string>
 {

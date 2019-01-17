@@ -64,6 +64,8 @@
 	
         public static readonly string BlurWindow = nameof(BlurWindow);
 	
+        public static readonly string NoNonClientAreaDragableWindow = nameof(NoNonClientAreaDragableWindow);
+	
         public static readonly string RateDemoCtl = nameof(RateDemoCtl);
 	
         public static readonly string ShieldDemoCtl = nameof(ShieldDemoCtl);
@@ -71,6 +73,8 @@
         public static readonly string WaterfallPanelDemoCtl = nameof(WaterfallPanelDemoCtl);
 	
         public static readonly string CoverViewDemoCtl = nameof(CoverViewDemoCtl);
+	
+        public static readonly string CoverFlowDemoCtl = nameof(CoverFlowDemoCtl);
 	
         public static readonly string ButtonDemoCtl = nameof(ButtonDemoCtl);
 
