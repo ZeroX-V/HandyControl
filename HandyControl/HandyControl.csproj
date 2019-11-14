@@ -142,6 +142,7 @@
     <Compile Include="Controls\Button\ContextMenuToggleButton.cs" />
     <Compile Include="Controls\Other\Carousel.cs" />
     <Compile Include="Controls\CoverView\CoverView.cs" />
+    <Compile Include="Controls\Other\TextPagination.cs" />
     <Compile Include="Controls\Panel\CirclePanel.cs" />
     <Compile Include="Controls\Other\CircleProgressBar.cs" />
     <Compile Include="Controls\Other\RadioGroup.cs" />
@@ -622,6 +623,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Themes\Styles\TextPagination.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
     <Page Include="Themes\Styles\Pagination.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -788,15 +793,15 @@
     <PreBuildEvent>
     </PreBuildEvent>
   </PropertyGroup>
-  <Import Project="..\packages\Clarius.TransformOnBuild.1.21.0\build\Clarius.TransformOnBuild.targets" Condition="Exists('..\packages\Clarius.TransformOnBuild.1.21.0\build\Clarius.TransformOnBuild.targets')" />
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+  <Import Project="..\packages\Clarius.TransformOnBuild.1.22.0\build\Clarius.TransformOnBuild.targets" Condition="Exists('..\packages\Clarius.TransformOnBuild.1.22.0\build\Clarius.TransformOnBuild.targets')" />
   <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
     <PropertyGroup>
       <ErrorText>这台计算机上缺少此项目引用的 NuGet 程序包。使用“NuGet 程序包还原”可下载这些程序包。有关更多信息，请参见 http://go.microsoft.com/fwlink/?LinkID=322105。缺少的文件是 {0}。</ErrorText>
     </PropertyGroup>
-    <Error Condition="!Exists('..\packages\Clarius.TransformOnBuild.1.21.0\build\Clarius.TransformOnBuild.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Clarius.TransformOnBuild.1.21.0\build\Clarius.TransformOnBuild.targets'))" />
+    <Error Condition="!Exists('..\packages\Clarius.TransformOnBuild.1.22.0\build\Clarius.TransformOnBuild.targets')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\Clarius.TransformOnBuild.1.22.0\build\Clarius.TransformOnBuild.targets'))" />
   </Target>
-  <PropertyGroup>
-    <PostBuildEvent>copy "$(TargetPath)" "F:\OtherProject\GatherLaneLnn\SourceCode\GatherLaneLnn\GatherLaneLnnSolu\GatherLaneLnn\Lib"
-</PostBuildEvent>
-  </PropertyGroup>
 </Project>

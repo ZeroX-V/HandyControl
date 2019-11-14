@@ -518,7 +518,7 @@
         <Setter Property="ScrollViewer.CanContentScroll" Value="true"/>
         <Setter Property="ScrollViewer.PanningMode" Value="Both"/>
         <Setter Property="Stylus.IsFlicksEnabled" Value="False"/>
-        <Setter Property="Padding" Value="9,6,0,6"/>
+        <Setter Property="Padding" Value="9,4,0,4"/>
         <Setter Property="Template" Value="{StaticResource ComboBoxTemplate}"/>
         <Setter Property="VerticalContentAlignment" Value="Center"/>
         <Style.Triggers>
