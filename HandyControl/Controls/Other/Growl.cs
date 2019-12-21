@@ -363,10 +363,10 @@ namespace HandyControl.Controls
         public static void Error(GrowlInfo growlInfo)
         {
             if (growlInfo == null) throw new ArgumentNullException(nameof(growlInfo));
-            // growlInfo.IconKey = ResourceToken.ErrorGeometry;
-            growlInfo.IconKey = ResourceToken.InfoGeometry;
-            growlInfo.IconBrushKey = ResourceToken.InfoBrush;
-           // growlInfo.IconBrushKey = ResourceToken.DangerBrush;
+             growlInfo.IconKey = ResourceToken.ErrorGeometry;
+            //growlInfo.IconKey = ResourceToken.InfoGeometry;
+           // growlInfo.IconBrushKey = ResourceToken.InfoBrush;
+            growlInfo.IconBrushKey = ResourceToken.DangerBrush;
             growlInfo.StaysOpen = true;
             growlInfo.Type = InfoType.Error;
             Show(growlInfo);
