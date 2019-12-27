@@ -12,6 +12,7 @@
         <ResourceDictionary Source="Clock.xaml"/>
         <ResourceDictionary Source="TreeView.xaml"/>
         <ResourceDictionary Source="Pagination.xaml"/>
+        <ResourceDictionary Source="TextPagination.xaml"/>
         <ResourceDictionary Source="TabControl.xaml"/>
         <ResourceDictionary Source="ListBox.xaml"/>
         <ResourceDictionary Source="Loading.xaml"/>

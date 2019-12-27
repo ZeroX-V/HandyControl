@@ -328,7 +328,7 @@ namespace HandyControl.Controls
             _dropDownButton.MouseLeave += DropDownButton_MouseLeave;
             if (SelectedDateTime == null)
             {
-                _textBox.Text = DateTime.Now.ToString(DateTimeFormat);
+              //  _textBox.Text = DateTime.Now.ToString(DateTimeFormat);
             }
             _textBox.KeyDown += TextBox_KeyDown;
             _textBox.TextChanged += TextBox_TextChanged;
