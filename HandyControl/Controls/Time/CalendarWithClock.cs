@@ -29,7 +29,7 @@ namespace HandyControl.Controls
 
         private ContentPresenter _calendarPresenter;
 
-        private Clock _clock;
+        private ListClock _clock;
 
         private Calendar _calendar;
 
@@ -217,10 +217,11 @@ namespace HandyControl.Controls
 
         private void InitCalendarAndClock()
         {
-            _clock = new Clock
+            _clock = new ListClock
             {
                 BorderThickness = new Thickness(),
-                Background = Brushes.Transparent
+                Background = Brushes.Transparent,
+
             };
             TitleElement.SetBackground(_clock, Brushes.Transparent);
             _clock.DisplayTimeChanged += Clock_DisplayTimeChanged;

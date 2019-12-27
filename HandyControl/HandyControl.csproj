@@ -45,7 +45,7 @@
     <DefineConstants>DEBUG;TRACE;netle45</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
-    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <netVersion>netgt40</netVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug-Net40|AnyCPU' ">
@@ -156,6 +156,7 @@
     <Compile Include="Controls\Tag\Tag.cs" />
     <Compile Include="Controls\Time\CalendarWithClock.cs" />
     <Compile Include="Controls\Time\Clock\Clock.cs" />
+    <Compile Include="Controls\Time\Clock\ClockBase.cs" />
     <Compile Include="Controls\Time\Clock\ClockRadioButton.cs" />
     <Compile Include="Controls\Other\Growl.cs" />
     <Compile Include="Controls\Image\ImageViewer.cs" />
@@ -180,6 +181,7 @@
     <Compile Include="Controls\Internal\InternalCanvas.cs" />
     <Compile Include="Controls\StepBar\StepBar.cs" />
     <Compile Include="Controls\StepBar\StepBarItem.cs" />
+    <Compile Include="Controls\Time\Clock\ListClock.cs" />
     <Compile Include="Controls\Time\FlipClock\FlipClock.cs" />
     <Compile Include="Controls\Time\FlipClock\FlipNumber.cs" />
     <Compile Include="Controls\Window\BlurWindow.cs" />
