@@ -8,6 +8,9 @@ namespace HandyControl.Controls
     [TemplatePart(Name = ElementHourList, Type = typeof(ListBox))]
     [TemplatePart(Name = ElementMinuteList, Type = typeof(ListBox))]
     [TemplatePart(Name = ElementSecondList, Type = typeof(ListBox))]
+    [TemplatePart(Name = ElementTimeText, Type = typeof(TextBlock))]
+
+
     public class ListClock : ClockBase
     {
         #region Constants
@@ -15,6 +18,9 @@ namespace HandyControl.Controls
         private const string ElementHourList = "PART_HourList";
         private const string ElementMinuteList = "PART_MinuteList";
         private const string ElementSecondList = "PART_SecondList";
+        private const string ElementTimeText = "PART_TimeText";
+
+        private string Title = "";
 
         #endregion Constants
 
@@ -25,6 +31,8 @@ namespace HandyControl.Controls
         private ListBox _minuteList;
 
         private ListBox _secondList;
+
+        private TextBlock _timeText;
 
         #endregion Data
 
@@ -73,6 +81,7 @@ namespace HandyControl.Controls
                 CreateItemsSource(_secondList, 60);
                 _secondList.SelectionChanged += SecondList_SelectionChanged;
             }
+            _timeText = GetTemplateChild(ElementTimeText) as TextBlock;
 
             ButtonConfirm = GetTemplateChild(ElementButtonConfirm) as Button;
 
@@ -141,8 +150,17 @@ namespace HandyControl.Controls
             _hourList.ScrollIntoView(_hourList.SelectedItem);
             _minuteList.ScrollIntoView(_minuteList.SelectedItem);
             _secondList.ScrollIntoView(_secondList.SelectedItem);
-
             DisplayTime = time;
+
+            _timeText.Text = Title;
+           
+        }
+
+        internal void SetTitle(string timeStr) {
+            Title = timeStr;
+            if (_timeText!=null) {
+                _timeText.Text = Title;
+            }
         }
     }
 }

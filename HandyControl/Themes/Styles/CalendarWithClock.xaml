@@ -34,7 +34,7 @@
                             <ContentPresenter Grid.Column="0" Grid.Row="0" Grid.RowSpan="2" x:Name="PART_ClockPresenter"/>
                             <Border  Grid.Row="2" Grid.Column="0" BorderThickness="0,1,0,0" BorderBrush="#eee">
                                 <StackPanel Orientation="Horizontal" HorizontalAlignment="Right">
-                                    <Button x:Name="btn_selectTime" VerticalAlignment="Bottom" HorizontalAlignment="Right" Margin="0,10,10,9">选择时间</Button>
+                                    <Button x:Name="PART_ButtonSelectTime" VerticalAlignment="Center" HorizontalAlignment="Right" Margin="0,0,10,0" Foreground="{DynamicResource PrimaryBrush}" Background="Transparent" Style="{StaticResource ButtonCustom}">选择时间</Button>
                                     <Button  Visibility="{TemplateBinding ShowConfirmButton,Converter={StaticResource Boolean2VisibilityConverter}}" Name="PART_ButtonConfirm"  Content="{x:Static langs:Lang.Confirm}" HorizontalAlignment="Right" Margin="0,10,10,9" Width="60" VerticalAlignment="Bottom" Style="{StaticResource ButtonPrimary}"/>
                                 </StackPanel>
                             </Border>

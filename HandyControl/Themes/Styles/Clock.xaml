@@ -155,26 +155,30 @@
             <Setter.Value>
                 <ControlTemplate TargetType="controls:ListClock">
                     <Border BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" Background="{TemplateBinding Background}">
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                                <ColumnDefinition/>
-                            </Grid.ColumnDefinitions>
-                            <Grid.RowDefinitions>
-                                <RowDefinition Height="50"/>
-                                <RowDefinition/>
-                            </Grid.RowDefinitions>
-                            <Border Grid.ColumnSpan="2" Background="#ff0000" >
-                                <TextBlock  >时间</TextBlock>
+                        <StackPanel>
+                            <Border   Visibility="{TemplateBinding ShowConfirmButton,Converter={StaticResource Boolean2VisibilityReConverter}}" Height="50" Grid.ColumnSpan="3" Background="{DynamicResource PrimaryBrush}" >
+                               
+                                <TextBlock x:Name="PART_TimeText" FontSize="14" Foreground="White" FontWeight="Bold" HorizontalAlignment="Center"  VerticalAlignment="Center"></TextBlock>
                             </Border>
-                           
-                            <ListBox  Grid.Row="1"  x:Name="PART_HourList" Style="{StaticResource ClockListBoxStyle}"/>
-                            <ListBox Grid.Row="1" Grid.Column="1" x:Name="PART_MinuteList" Style="{StaticResource ClockListBoxStyle}" BorderThickness="1,0"/>
-                            <ListBox Grid.Row="1" Grid.Column="2" x:Name="PART_SecondList" Style="{StaticResource ClockListBoxStyle}"/>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                    <ColumnDefinition/>
+                                </Grid.ColumnDefinitions>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                </Grid.RowDefinitions>
+
+                                <ListBox   x:Name="PART_HourList" Style="{StaticResource ClockListBoxStyle}"/>
+                                <ListBox  Grid.Column="1" x:Name="PART_MinuteList" Style="{StaticResource ClockListBoxStyle}" BorderThickness="1,0"/>
+                                <ListBox  Grid.Column="2" x:Name="PART_SecondList" Style="{StaticResource ClockListBoxStyle}"/>
+                                
+                            </Grid>
                             <Border VerticalAlignment="Bottom" Visibility="{Binding Visibility,ElementName=PART_ButtonConfirm}" Height="1" Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="3" Background="{DynamicResource BorderBrush}"/>
-                            <Button Margin="0,10" Grid.Column="0" Grid.ColumnSpan="3" Grid.Row="2" Visibility="{TemplateBinding ShowConfirmButton,Converter={StaticResource Boolean2VisibilityConverter}}" Name="PART_ButtonConfirm" Content="{x:Static langs:Lang.Confirm}" Foreground="{DynamicResource PrimaryBrush}" HorizontalAlignment="Center" Background="Transparent" Style="{StaticResource ButtonCustom}"/>
-                        </Grid>
+                            <Button Margin="0,10"  Visibility="{TemplateBinding ShowConfirmButton,Converter={StaticResource Boolean2VisibilityConverter}}" Name="PART_ButtonConfirm" Content="{x:Static langs:Lang.Confirm}" Foreground="{DynamicResource PrimaryBrush}" HorizontalAlignment="Center" Background="Transparent" Style="{StaticResource ButtonCustom}"/>
+                        </StackPanel>
+                       
                     </Border>
                 </ControlTemplate>
             </Setter.Value>

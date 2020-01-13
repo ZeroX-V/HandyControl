@@ -11,6 +11,7 @@ namespace HandyControl.Controls
     [TemplatePart(Name = ElementButtonConfirm, Type = typeof(Button))]
     [TemplatePart(Name = ElementClockPresenter, Type = typeof(ContentPresenter))]
     [TemplatePart(Name = ElementCalendarPresenter, Type = typeof(ContentPresenter))]
+    [TemplatePart(Name = ElementButtonSelectTimer, Type = typeof(Button))]
     public class CalendarWithClock : Control
     {
         #region Constants
@@ -20,6 +21,10 @@ namespace HandyControl.Controls
         private const string ElementClockPresenter = "PART_ClockPresenter";
 
         private const string ElementCalendarPresenter = "PART_CalendarPresenter";
+
+        private const string ElementButtonSelectTimer = "PART_ButtonSelectTime";
+
+
 
         #endregion Constants
 
@@ -34,6 +39,8 @@ namespace HandyControl.Controls
         private Calendar _calendar;
 
         private Button _buttonConfirm;
+
+        private Button _buttonSelectTime;
 
         private bool _isLoaded;
 
@@ -142,15 +149,21 @@ namespace HandyControl.Controls
             base.OnApplyTemplate();
 
             _buttonConfirm = GetTemplateChild(ElementButtonConfirm) as Button;
+            _buttonSelectTime = GetTemplateChild(ElementButtonSelectTimer) as Button;
+
+
             _clockPresenter = GetTemplateChild(ElementClockPresenter) as ContentPresenter;
             _calendarPresenter = GetTemplateChild(ElementCalendarPresenter) as ContentPresenter;
 
             CheckNull();
 
             _clockPresenter.Content = _clock;
+            _clockPresenter.Visibility = Visibility.Collapsed;
             _calendarPresenter.Content = _calendar;
 
             _buttonConfirm.Click += ButtonConfirm_OnClick;
+            _buttonSelectTime.Click += ButtonSelectTime_OnClick;
+
         }
 
         #endregion
@@ -209,9 +222,33 @@ namespace HandyControl.Controls
             if (_buttonConfirm == null || _clockPresenter == null || _calendarPresenter == null) throw new Exception();
         }
 
+        private void ButtonSelectTime_OnClick(object sender, RoutedEventArgs e)
+        {
+           
+
+            if (_clockPresenter.Visibility == Visibility.Collapsed)
+            {
+                _clockPresenter.Visibility = Visibility.Visible;
+                _calendarPresenter.Visibility = Visibility.Collapsed;
+                _buttonSelectTime.Content = "选择日期";
+                _clock.SetTitle((_calendar.SelectedDate == null ? DateTime.Now : Convert.ToDateTime(_calendar.SelectedDate)).ToString("yyyy年MM月dd日"));
+            }
+            else
+            {
+                _calendarPresenter.Visibility = Visibility.Visible;
+                _clockPresenter.Visibility = Visibility.Collapsed;
+                _buttonSelectTime.Content = "选择时间";
+
+            }
+        }
+
+
         private void ButtonConfirm_OnClick(object sender, RoutedEventArgs e)
         {
             SelectedDateTime = DisplayDateTime;
+            _calendarPresenter.Visibility = Visibility.Visible;
+            _clockPresenter.Visibility = Visibility.Collapsed;
+            _buttonSelectTime.Content = "选择时间";
             Confirmed?.Invoke();
         }
 
